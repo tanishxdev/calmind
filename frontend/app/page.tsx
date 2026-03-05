@@ -21,7 +21,13 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { Ripple } from "@/components/ui/ripple";
 
 // Icons
@@ -33,12 +39,11 @@ import {
   Lock,
   MessageSquareHeart,
   ArrowRight,
-  HeartPulse
+  HeartPulse,
 } from "lucide-react";
 
 // Component Start
 export default function Home() {
-
   //  Emotion scale used on UI slider
   const emotions = [
     { value: 0, label: "Down", icon: "😔", color: "from-blue-500/50" },
@@ -57,7 +62,7 @@ export default function Home() {
   // Welcome onboarding steps shown in dialog
   const welcomeSteps = [
     {
-      title: "Hi, I'm Aura",
+      title: "Hi, I'm Calmind",
       description:
         "Your AI companion for emotional well-being. I provide a safe, judgment-free space for you.",
       icon: Waves,
@@ -119,12 +124,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
-
       {/* ===========================
           HERO SECTION
       ============================ */}
       <section className="relative min-h-[90vh] mt-20 flex flex-col items-center justify-center py-12 px-4">
-
         {/* Background Effects */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div
@@ -144,7 +147,6 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="space-y-8 text-center"
         >
-
           {/* Badge */}
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm border border-primary/30 bg-primary/5">
             <Waves className="w-4 h-4 text-primary" />
@@ -160,7 +162,8 @@ export default function Home() {
 
           {/* Sub text */}
           <p className="max-w-[600px] mx-auto text-muted-foreground">
-            Experience emotional support with an AI trained in empathy and therapy methodologies.
+            Experience emotional support with an AI trained in empathy and
+            therapy methodologies.
           </p>
 
           {/* Emotion Slider */}
@@ -172,11 +175,15 @@ export default function Home() {
                   key={em.value}
                   onClick={() => setEmotion(em.value)}
                   className={`cursor-pointer transition-all ${
-                    Math.abs(emotion - em.value) < 15 ? "scale-110" : "opacity-50"
+                    Math.abs(emotion - em.value) < 15
+                      ? "scale-110"
+                      : "opacity-50"
                   }`}
                 >
                   <div className="text-2xl">{em.icon}</div>
-                  <div className="text-xs text-muted-foreground">{em.label}</div>
+                  <div className="text-xs text-muted-foreground">
+                    {em.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -207,11 +214,11 @@ export default function Home() {
       ============================ */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold">How Calmind Helps You</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A modern support system powered by empathetic artificial intelligence.
+              A modern support system powered by empathetic artificial
+              intelligence.
             </p>
           </div>
 
@@ -280,9 +287,7 @@ export default function Home() {
                 }
               }}
             >
-              {currentStep === welcomeSteps.length - 1
-                ? "Let's Begin"
-                : "Next"}
+              {currentStep === welcomeSteps.length - 1 ? "Let's Begin" : "Next"}
             </Button>
           </div>
         </DialogContent>

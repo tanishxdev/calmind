@@ -12,13 +12,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import {
-  Menu,
-  X,
-  MessageCircle,
-  AudioWaveform,
-  LogOut,
-} from "lucide-react";
+import { Menu, X, MessageCircle, AudioWaveform, LogOut } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -28,7 +22,7 @@ import { useSession } from "@/lib/contexts/session-context";
 // Navigation links displayed in Desktop & Mobile views
 const NAV_ITEMS = [
   { href: "/features", label: "Features" },
-  { href: "/about", label: "About Aura" },
+  { href: "/about", label: "About Calmind" },
 ];
 
 export function Header() {
@@ -53,7 +47,7 @@ export function Header() {
 
             <div className="flex flex-col leading-tight">
               <span className="font-semibold text-lg bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                Aura3.0
+                Calmind3.0
               </span>
               <span className="text-xs dark:text-muted-foreground">
                 Your mental health companion
@@ -85,7 +79,10 @@ export function Header() {
               {isAuthenticated ? (
                 <>
                   {/* Start Chat / Dashboard */}
-                  <Button asChild className="hidden md:flex gap-2 bg-primary/90 hover:bg-primary">
+                  <Button
+                    asChild
+                    className="hidden md:flex gap-2 bg-primary/90 hover:bg-primary"
+                  >
                     <Link href="/dashboard">
                       <MessageCircle className="w-4 h-4 mr-1" />
                       Start Chat
@@ -139,7 +136,10 @@ export function Header() {
               ))}
 
               {isAuthenticated && (
-                <Button asChild className="mt-2 mx-4 gap-2 bg-primary/90 hover:bg-primary">
+                <Button
+                  asChild
+                  className="mt-2 mx-4 gap-2 bg-primary/90 hover:bg-primary"
+                >
                   <Link href="/dashboard">
                     <MessageCircle className="w-4 h-4" />
                     <span>Start Chat</span>
